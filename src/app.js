@@ -3,6 +3,8 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
 // egs of routes. 
@@ -193,9 +195,8 @@ app.get('*', (req, res)=>{
 
 
 // server startup
-app.listen(3000, ()=>{
-    console.log('server is up on port 3000');
+app.listen(port, ()=>{
+    console.log('server is up on port ' + port);
 });
 
 
-console.log('git is tracking..');

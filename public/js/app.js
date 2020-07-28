@@ -35,7 +35,7 @@ form.addEventListener('submit', (event) => {
     message1.textContent = 'Loading.....'; // to give loading effect
     message2.textContent = ''; // blanck so that latest forecaste could be updated
 
-    const weather_url = fetch('http://localhost:3000/weather?address=' + location);
+    const weather_url = fetch('/weather?address=' + location);
     weather_url.then((res) => {
     res.json().then((weatherData) => {
         if(!weatherData.error){
